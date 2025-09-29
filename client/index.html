@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Online Compiler</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.34.0/min/vs/loader.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Advanced Online Compiler</h1>
+
+        <div class="controls">
+            <select id="language">
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="typescript">TypeScript</option>
+            </select>
+            <button id="run">Run Code</button>
+        </div>
+
+        <div id="editor" style="height: 400px; border: 1px solid #1e1e1e; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); border-radius: 5px; overflow: hidden;"></div>
+
+        <textarea id="input" placeholder="Enter input (e.g., 5\n10\n15)" rows="4"></textarea>
+
+        <h3>Output:</h3>
+        <pre id="output">Run your code to see the output here.</pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+/*
+ * Dark Theme for Online Compiler
+ */
+
+/* Main Background and Text */
+body {
+    /* Deep charcoal background */
+    background: #1e1e1e; 
+    /* Light off-white text for high contrast */
+    color: #f0f0f0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container to center content on larger screens */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    /* Light blue accent for the title */
+    color: #4fc3f7; 
+    margin-bottom: 20px;
+    font-weight: 300; /* Lighter font weight for a modern look */
+}
+
+h3 {
+    color: #f0f0f0;
+    margin-top: 20px;
+}
+
+/* Controls (Select and Button) */
+.controls {
+    display: flex;
+    gap: 10px; /* Space between elements */
+    margin-bottom: 20px;
+}
+
+select, button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    outline: none; /* Remove focus outline on click */
+}
+
+/* Dropdown/Select Styling */
+select {
+    /* Darker grey background for controls */
+    background-color: #333333; 
+    color: #f0f0f0;
+    border: 1px solid #555;
+    flex-grow: 1; /* Allows it to take up more space */
+    appearance: none; /* Remove default dropdown arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23f0f0f0' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
+
+/* Run Button Styling */
+#run {
+    /* Bright green accent for action button */
+    background-color: #66bb6a; 
+    color: #1e1e1e; /* Dark text on the bright button */
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 150, 0, 0.2);
+}
+
+#run:hover {
+    background-color: #81c784; /* Slightly lighter on hover */
+    box-shadow: 0 6px 8px rgba(0, 150, 0, 0.3);
+}
+
+/* Input Textarea */
+textarea {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    /* Matches the dark background of the editor */
+    background-color: #252526; 
+    color: #f0f0f0;
+    border: 1px solid #3c3c3c;
+    border-radius: 5px;
+    font-family: 'Consolas', monospace;
+    resize: vertical;
+    box-sizing: border-box; /* Include padding in width calculation */
+    min-height: 100px;
+}
+
+/* Output Area */
+#output {
+    /* Background for output area */
+    background: #2d2d30; 
+    padding: 15px;
+    white-space: pre-wrap;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-family: 'Consolas', monospace;
+    min-height: 50px;
+    color: #ccc; /* Slightly dimmer text for output */
+    overflow-x: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+    }
+    select, button {
+        width: 100%;
+    }
+    body {
+        padding: 10px;
+    }
+}
