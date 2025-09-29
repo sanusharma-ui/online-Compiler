@@ -1,32 +1,33 @@
-# Base image with Node.js
-FROM node:20-alpine
+# Base image with Node.js + Python support
+FROM node:20-bullseye-slim
 
 # Set working directory
 WORKDIR /usr/src/app
 
 # ---------------------------------------------
-# 1️⃣ Install system dependencies for Python
+# 1️⃣ Install system dependencies for Python & scientific libraries
 # ---------------------------------------------
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
-    py3-pip \
-    bash \
-    build-base \
+    python3-pip \
+    python3-dev \
+    build-essential \
     gcc \
     g++ \
-    musl-dev \
-    python3-dev \
-    linux-headers \
-    gfortran \
-    lapack \
-    lapack-dev \
-    openblas \
-    openblas-dev \
+    make \
     cmake \
-    make
+    gfortran \
+    libopenblas-dev \
+    liblapack-dev \
+    libatlas-base-dev \
+    libffi-dev \
+    curl \
+    git \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # ---------------------------------------------
-# 2️⃣ Pre-install Python modules
+# 2️⃣ Pre-install Python libraries
 # ---------------------------------------------
 RUN pip3 install --no-cache-dir \
     numpy \
